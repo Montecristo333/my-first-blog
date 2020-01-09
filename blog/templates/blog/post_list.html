@@ -7,22 +7,13 @@
             <h1><a href="/">Django Deivis Blog</a></h1>
         </div>
 
+      {% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Yo no quería postear estos pero se me fué</p>
+            <p> publicado: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr}}</p>
         </div>
+      {% endfor %}
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Quién se llevó mi queso</p>
-        </div>
-
-        <div>
-            <p>published: 17.07.2099, 12:14</p>
-            <h2><a href="">Posteado en un futuro lejano</a></h2>
-            <p>Pronto el mundo será mío... bueno creo que no será tan pronto</p>
-        </div>
     </body>
 </html>
